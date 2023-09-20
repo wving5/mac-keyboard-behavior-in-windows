@@ -1,4 +1,15 @@
-; This script assumes that Alt and Ctrl characters have been swapped using a third-party tool
+; ************** Warning **************
+; This script assumes assumed left-handed by default and `LAlt` & `LWin` have been modified using "Powertoys Keyboard Manager" as below:
+; LWin -> LAlt, LAlt -> RCtrl
+; *************************************
+
+; -----AHK Docs-----
+; https://autohotkey.com/docs/Hotkeys.htm
+; https://autohotkey.com/docs/KeyList.htm
+
+; -----Ref------
+; https://gist.github.com/ascendbruce/677c3169259c975259045f905cd889d6
+; https://github.com/stevenilsen123/mac-keyboard-behavior-in-windows/blob/main/mac.ahk
 
 ; -----KEY GUIDE-----
 ; # Win. (the key with the Windows logo) therefore `Send #e` would hold down Win and then press E.
@@ -15,95 +26,159 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 ; #InstallKeybdHook
 ; KeyHistory
 
-; App and tab switching
-Ctrl & Tab::AltTab
-!Tab::Send("^{Tab}")
+; ************** shortcuts commented below was handled using "Powertoys Keyboard manager" shortcut remap **************
+;; App and tab switching
+; Ctrl & Tab::AltTab
+; Ctrl & Shift & Tab::ShiftAltTab ;; WONT work
+; !Tab::Send("^{Tab}")
+; !+Tab::Send("^+{Tab}") ;; WONT work when holding Alt
 
-; Quit the active app
+;; PowerToys Run default shortcut
+; >^Space::Send("!{Space}") ; WONT work when holding RCtrl
+
+;; Switch input language and keyboard layout
+; <!Space::Send("#{Space}") ; WONT work when holding LAlt
+
+;; Windows snipping tool
+; +<!s::Send("+#s") ; BUGGY: also launching MS Office365
+
+;; Windows search
+<!s::Send("#{s}")
+
+;; Quit the active app
 ^q::Send("!{f4}")
 
+;; Windows Run
+<!r::Send("#{r}")
+
+;; Windows lock
+<!l::Send("#{l}")
+
+;; Windows desktop
+<!d::Send("#{d}")
+
+;; Windows File Explorer
+<!e::Send("#{e}")
+
+;; Windows Settings
+<!i::Send("#{i}")
+
+;; Windows Quick Setting
+<!a::Send("#{a}")
+
+;; Minimize all windows
+<!m::Send("#{m}")
+
+;; Open the clipboard history
+<!v::Send("#{v}")
+
+;; Open the Quick Link menu
+<!x::Send("#{x}")
+
+;; Open the snap layouts. Updated in Windows 11
+<!z::Send("#{z}")
+
+;; PowerToys ColorPicker default shortcut
+; +<!c::Send("+#{s}") ; BUGGY: also launching MS Office365
+
+; *********************************************************************************************************************
+
 ; Insertion point movement
-^Left::
+>^Left::
 {
     Suspend(true)
     Send("{Home}")
     Suspend(false)
     return
 }
-^Right::
+>^Right::
 {
     Suspend(true)
     Send("{End}")
     Suspend(false)
     return
 }
-^Up::
+>^Up::
 {
     Suspend(true)
     Send("^{Home}")
     Suspend(false)
     return
 }
-^Down::
+>^Down::
 {
     Suspend(true)
     Send("^{End}")
     Suspend(false)
     return
 }
-+^Left::
++>^Left::
 {
     Suspend(true)
     Send("+{Home}")
     Suspend(false)
     return
 }
-+^Right::
++>^Right::
 {
     Suspend(true)
     Send("+{End}")
     Suspend(false)
     return
 }
-+^Up::
++>^Up::
 {
     Suspend(true)
     Send("+^{Home}")
     Suspend(false)
     return
 }
-+^Down::
++>^Down::
 {
     Suspend(true)
     Send("+^{End}")
     Suspend(false)
     return
 }
-#Left::
+<!Left::
 {
     Suspend(true)
     Send("^{Left}")
     Suspend(false)
     return
 }
-#Right::
+<!Right::
 {
     Suspend(true)
     Send("^{Right}")
     Suspend(false)
     return
 }
-+#Left::
++<!Left::
 {
     Suspend(true)
     Send("+^{Left}")
     Suspend(false)
     return
 }
-+#Right::
++<!Right::
 {
     Suspend(true)
     Send("+^{Right}")
     Suspend(false)
     return
+}
+>^BS::
+{
+  Suspend(true)
+  Send("+{Home}{Del}")
+  Suspend(false)
+  return
+}
+<!BS::
+{
+  Suspend(true)
+  Send("^{BS}")
+  Suspend(false)
+  return
 }
