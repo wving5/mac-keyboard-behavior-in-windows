@@ -1,55 +1,51 @@
 {
-    "remapKeys": {
-      "inProcess": [
-        {
-          "originalKeys": "91",
-          "newRemapKeys": "164"
-        },
-        {
-          "originalKeys": "164",
-          "newRemapKeys": "163"
-        },
-        {
-          "originalKeys": "93",
-          "newRemapKeys": "91"
-        }
-      ]
-    },
-    "remapShortcuts": {
-      "global": [
-        {
-          "originalKeys": "164;9",
-          "newRemapKeys": "91;9"
-        },
-        {
-          "originalKeys": "164;32",
-          "newRemapKeys": "91;32"
-        },
-        {
-          "originalKeys": "164;160;83",
-          "newRemapKeys": "91;160;83"
-        },
-        {
-          "originalKeys": "164;16;9",
-          "newRemapKeys": "91;16;9"
-        },
-        {
-          "originalKeys": "164;16;67",
-          "newRemapKeys": "91;16;67"
-        },
-        {
-          "originalKeys": "163;9",
-          "newRemapKeys": "18;9"
-        },
-        {
-          "originalKeys": "163;32",
-          "newRemapKeys": "18;32"
-        },
-        {
-          "originalKeys": "163;16;9",
-          "newRemapKeys": "18;16;9"
-        }
-      ],
-      "appSpecific": []
-    }
+  "remapKeys": {
+    "inProcess": [
+      {
+        "originalKeys": "91",
+        "newRemapKeys": "164"
+      },
+      {
+        "originalKeys": "164",
+        "newRemapKeys": "163"
+      }
+    ]
+  },
+  "remapShortcuts": {
+    "global": [
+      {
+        "originalKeys": "164;9",
+        "newRemapKeys": "260;9"
+      },
+      {
+        "originalKeys": "164;32",
+        "newRemapKeys": "260;32"
+      },
+      {
+        "originalKeys": "164;16;67",
+        "newRemapKeys": "260;16;67"
+      },
+      {
+        "originalKeys": "164;16;83",
+        "newRemapKeys": "260;16;83"
+      },
+      {
+        "originalKeys": "163;9",
+        "newRemapKeys": "18;9"
+      },
+      {
+        "originalKeys": "163;32",
+        "newRemapKeys": "18;32"
+      },
+      {
+        "originalKeys": "163;16;9",
+        "newRemapKeys": "18;16;9"
+      },
+      {
+        "originalKeys": "163;16;90",
+        "newRemapKeys": "17;89"
+      }
+    ],
+    "appSpecific": []
   }
+}

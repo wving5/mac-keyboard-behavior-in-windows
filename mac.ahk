@@ -28,19 +28,20 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 
 ; ************** shortcuts commented below was handled using "Powertoys Keyboard manager" shortcut remap **************
 ;; App and tab switching
-; Ctrl & Tab::AltTab
-; Ctrl & Shift & Tab::ShiftAltTab ;; WONT work
-; !Tab::Send("^{Tab}")
-; !+Tab::Send("^+{Tab}") ;; WONT work when holding Alt
-
-;; PowerToys Run default shortcut
-; >^Space::Send("!{Space}") ; WONT work when holding RCtrl
+; RCtrl & Tab::AltTab
+; RCtrl & Shift & Tab::ShiftAltTab ;; WONT work
 
 ;; Switch input language and keyboard layout
 ; <!Space::Send("#{Space}") ; WONT work when holding LAlt
 
 ;; Windows snipping tool
 ; +<!s::Send("+#s") ; BUGGY: also launching MS Office365
+
+;; PowerToys Run default shortcut
+; >^Space::Send("!{Space}") ; WONT work when holding RCtrl
+
+;; PowerToys ColorPicker default shortcut
+; +<!c::Send("+#{s}") ; BUGGY: also launching MS Office365
 
 ;; Windows search
 <!s::Send("#{s}")
@@ -77,9 +78,6 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 
 ;; Open the snap layouts. Updated in Windows 11
 <!z::Send("#{z}")
-
-;; PowerToys ColorPicker default shortcut
-; +<!c::Send("+#{s}") ; BUGGY: also launching MS Office365
 
 ; *********************************************************************************************************************
 
